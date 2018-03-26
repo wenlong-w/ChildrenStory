@@ -1,0 +1,120 @@
+.play-container{
+  background-color: #EAEAEA;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:54%;
+
+}
+.audio-control-process{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+}
+.process-body{
+  width: 260px
+}
+.audio-control-button{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-self: center;
+  background-color: #fff;
+  padding-bottom: 10px;
+}
+.play-audio{
+  width: 70px;
+  height: 70px;
+}
+.pre-audio{
+  width: 40px;
+  height: 40px;
+  margin-left: 50px;
+}
+.next-audio{
+  width: 40px;
+  height: 40px;
+  margin-right: 50px;
+}
+.audio-info{
+    margin-top:10px;
+    background-color: #fff;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top: 1px solid #E6E7EB;
+    border-bottom: 1px solid #E6E7EB;
+}
+.audio-info .num{
+  display: flex;
+  justify-content: flex-start;
+  color: #999;
+  font-size: 14px;
+}
+.audio-info .num .num-child{
+  margin-left: 14px;
+}
+.audio-title{
+  display: flex;
+  justify-content: center;
+  font-size:26px;
+}
+.audio-praise-collect{
+  display: flex;
+  justify-content: space-around;
+  margin-top:20px;
+}
+.audio-praise-collect image{
+  width:20px;
+  height:20px;
+}
+.pre-audio-praise-collect-operate{
+  /* border: 1px solid #8a8a8c; */
+  display: flex;
+  justify-content: center;
+  width:100px;
+  height:40px;
+  align-items: center;
+  border-radius:20px;
+  background-color:#e64340;
+  border-bottom-color:#e64340;
+}
+.audio-praise-collect-operate{
+  /* border: 1px solid #8a8a8c; */
+  display: flex;
+  justify-content: center;
+  width:100px;
+  height:40px;
+  align-items: center;
+  border-radius:20px;
+  background-color:#b2b2b2;
+  border-bottom-color:#b2b2b2;
+}
+.pre-audio-praise-collect-operate .font{
+  margin-left: 4px;    
+  color: #fff
+}
+.audio-praise-collect-operate .font{
+  margin-left: 4px;    
+  color: #e64340
+}
+.low-right-pay{
+  position:fixed;
+  right:20px;
+  bottom:150px;
+  display: none
+}
+.low-right-forward{
+  position:fixed;
+  right:20px;
+  bottom:106px;
+  display: none
+}
+.low-right-back{
+  position:fixed;
+  right:20px;
+  bottom:60px;
+}

@@ -1,0 +1,22 @@
+@import "../../template/audio/audio.wxss";
+.low-right-back{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+}
+.low-right-pay{
+  /* display: none; */
+  position:fixed;
+  right:20px;
+  bottom:108px;
+}
+.low-right-forward{
+  position:fixed;
+  right:20px;
+  bottom:70px;
+  width: 56px;
+  height: 40px
+}
+button[plain]{
+  border: 0px solid red
+}

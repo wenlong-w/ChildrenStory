@@ -1,0 +1,15 @@
+<import src="../template/diary/diary.wxml"/>
+<view>
+  <view wx:for="{{diaryList}}" wx:key="{{id}}" class='diary-template' >
+    <template is="diaryItem" data="{{...item}}"/>
+  </view>
+</view>
+<view class='low-right-pay' bindtap='goPraise'>
+  <image src='../image/toPay.png' style='width:40px;height:40px'></image>
+</view>
+<button class='low-right-forward' open-type="share" plain="true" hover-class="none">
+  <image src='../image/forward.png' style='width:40px;height:40px'></image>
+</button>
+<view class='low-right-back' bindtap='goBack'>
+  <image src='../image/goBack.png' style='width:40px;height:40px'></image>
+</view>

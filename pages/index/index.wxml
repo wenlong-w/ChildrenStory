@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<import src="../template/audio/audio.wxml"/>
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" id="{{item}}" bindtap='topDo' mode='aspectFill' style='width:100%;height:186px' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="index-container">
+  <view wx:for="{{audioList}}" wx:key="{{id}}" class='audio-template' >
+    <template is="audioItem" data="{{...item}}"/>
+  </view>
+</view>
+<view class='low-right-pay' bindtap='goPraise'>
+  <image src='../image/toPay.png' style='width:40px;height:40px'></image>
+</view>
+<button class='low-right-forward' open-type="share" plain="true" hover-class="none">
+  <image src='../image/forward.png' style='width:40px;height:40px'></image>
+</button>

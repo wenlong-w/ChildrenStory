@@ -1,0 +1,5 @@
+<template name="diaryItem">
+  <view class='diary-date'>{{dt}}</view>
+  <view wx:if="{{gender == '1'}}" class='diary-content man'>{{content}}</view>
+  <view wx:elif="{{gender == '0'}}" class='diary-content woman'>{{content}}</view>
+</template>

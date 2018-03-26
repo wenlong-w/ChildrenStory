@@ -1,0 +1,105 @@
+/**index.wxss**/
+.mine-container{
+  background-color: #EAEAEA;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.userinfo button{
+  margin:20px 0px;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+ 
+}
+
+.userinfo-nickname {
+  /* color: #aaa; */
+  margin-bottom: 6px;
+  font-size:22px;
+}
+.about-our{
+   /* display: none;  */
+   display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 17px;
+  border: 1px solid #e6e7eb;
+  background-color: #EAEAEA;
+  font-size:12px;
+  width: 106px;
+  height: 22px;
+  /* margin-bottom: 10px; */
+  color: #999;
+}
+.about-our-story{
+   /* display: none;  */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #999;
+  line-height:18px;
+  height: 0px;
+  opacity: 0;
+}
+.about-our-story .vview{
+  display:flex;
+  justify-content:center;
+}
+.point-view{
+  font-weight: bold;
+  color: #999;
+  margin-top: 4px;
+  margin-bottom:10px;
+
+}
+.button-view{
+  background-color: #fff;
+  
+}
+.button-view image{
+  width: 40px;
+  height: 36px;
+  padding: 12px 12px;
+}
+.button-view .line{
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.button-view{
+  margin-top: 10px;
+
+}
+/* .collect{
+  border-bottom: 1px solid #e6e7eb;
+} */
+.reward{
+  border-bottom: 1px solid #e6e7eb;
+}
+.brief-introduction{
+  color: #999999;
+  font-size:12px;
+}
+.line-right {
+  height: 46px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:12px 0px;
+   z-index:999;
+}
+.line-right .title{
+  font-weight:bold;
+  font-size:16px;
+}

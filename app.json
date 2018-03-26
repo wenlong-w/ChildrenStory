@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/mine/collect/collect",
+    "pages/mine/aboutMe/aboutMe",
+    "pages/logs/logs",
+    "pages/playAudio/playAudio",
+    "pages/template/diary/diary",
+    "pages/diary/diary"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#EAEAEA"
+  },
+  "tabBar": {
+    "color": "#8a8a8c",
+    "selectedColor": "#3cb034",
+    "borderStyle": "black",
+    "backgroundColor": "#f7f7fa",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/image/uncheckedBook.png",
+        "selectedIconPath": "pages/image/checkedBook.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "pages/image/uncheckedMine.png",
+        "selectedIconPath": "pages/image/checkedMine.png"
+      }
+    ]
+  }
+}

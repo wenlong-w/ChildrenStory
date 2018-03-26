@@ -1,0 +1,18 @@
+<view style='margin:0px 8px'>
+  <text style='line-height:26px;color:#3d4145' decode="{{true}}">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大家好，我是《儿童故事每天听》的作者，也是一名程序员。
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我和我的媳妇一起制作了这款小程序，我负责写代码，媳妇负责读小故事。
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果你们家的小宝宝喜欢听里面的小故事，我们会感到非常荣幸。
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们家小宝宝也马上要出生了^_^，媳妇在怀孕后期，时不时的会读个小故事来做胎教。后来我们觉得读了这么多小故事，完全可以录下来，和大家分享，说不定也会有其他小宝宝喜欢。
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于是我们开始做了这款小程序。希望大家能够喜欢，多多支持。
+  </text>
+</view>
+<view class='low-right-pay' bindtap='goPraise'>
+  <image src='../../image/toPay.png' style='width:40px;height:40px'></image>
+</view>
+<button class='low-right-forward' open-type="share" plain="true" hover-class="none">
+  <image src='../../image/forward.png' style='width:40px;height:40px'></image>
+</button>
+<view class='low-right-back' bindtap='goBack'>
+  <image src='../../image/goBack.png' style='width:40px;height:40px'></image>
+</view>

@@ -1,0 +1,15 @@
+.diary-date {
+  padding: 6px 0px;
+  margin-left: 10px;
+  color: #999;
+  border-bottom: 1px solid #dcdee3;
+}
+.diary-content.man{
+  padding: 10px 10px;
+  /* color: #FF9966; */
+  color: #999
+}
+.diary-content.woman{
+  padding: 10px 10px;
+  color: #FF9966;
+}

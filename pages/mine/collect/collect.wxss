@@ -1,0 +1,6 @@
+@import "../../template/audio/audio.wxss";
+.low-right-back{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+}

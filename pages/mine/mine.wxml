@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<view class="mine-container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 我是谁 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <view class='about-our' bindtap="aboutOur">关于我们的故事</view>
+    <view animation="{{animationData}}" class='about-our-story' bindtap="aboutOur">
+      <view class='vview' style='padding-top:10px'>{{ourYear}}年{{ourMonth}}月{{ourDay}}号</view>
+      <view class='vview'>我们第一次相遇</view>
+      <view class='vview'>我们都有一个共同的初衷</view>
+      <view class='vview'>即使再忙</view>
+      <view class='vview'>也会抽出点时间</view>
+      <view class='vview'>陪着孩子</view>
+      <view class='vview'>听一段小故事</view>
+    </view>
+    <view class='point-view'>...</view>
+  </view>
+  <!--
+  <view class='button-view'>
+    <view class='line' bindtap='toCollectView'>
+      <image src='../image/checkedCollect.png'></image>
+      <view class='line-right collect'>
+        <view class='title'>收藏</view>
+        <view class='brief-introduction'>这里有您收藏的小故事</view>
+      </view>
+    </view>
+    <view class='line' bindtap='toFootPrint'>
+      <image src='../image/checkedCollect.png'></image>
+      <view class='line-right footprint'>
+        <view class='title'>足迹</view>
+        <view class='brief-introduction'>这里记录着您浏览过的小故事</view>
+      </view>
+    </view>
+  </view>
+  -->
+  <view class='button-view'>
+    <view class='line' bindtap='toCollectView'>
+      <image src='../image/checkedCollect.png'></image>
+      <view class='line-right collect'>
+        <view class='title'>收藏</view>
+        <view class='brief-introduction'>这里有您收藏的小故事</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='button-view last'>
+    <view class='line'  bindtap="aboutMe">
+      <image src='../image/about.png'></image>
+      <view class='line-right about-me'>
+        <view class='title'>关于</view>
+        <view class='brief-introduction'>出品人信息</view>
+      </view>
+    </view>
+  </view> -->
+  <view class='button-view last'>
+    <view class='line' bindtap='toPraiseView'>
+      <image src='../image/zanPay.png'></image>
+      <view class='line-right reward'>
+        <view class='title'>支持</view>
+        <view class='brief-introduction'>感谢您的鼓励和支持</view>
+      </view>
+    </view>
+    <view class='line' bindtap='toDiaryBind'>
+      <image src='../image/xiaoji.png'></image>
+      <view class='line-right reward'>
+        <view class='title'>小记</view>
+        <view class='brief-introduction'>记录生活中的一点小事</view>
+      </view>
+    </view>
+    <view class='line' bindtap="aboutMe">
+      <image src='../image/about.png'></image>
+      <view class='line-right about-me'>
+        <view class='title'>关于</view>
+        <view class='brief-introduction'>出品人信息</view>
+      </view>
+    </view>
+  </view>
+</view>

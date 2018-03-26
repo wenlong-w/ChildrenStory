@@ -1,0 +1,16 @@
+<template name='audioItem' >
+  <image class='image' mode="{{mode}}" src="{{imgUrl}}"></image>
+  <view id='{{id}}' class='audio-info' bindtap="toPlayAudio">
+    <view class='title'>{{storyName}}</view>
+    <view class='audio-num'>
+      <view class='audio-num-play'>
+        <image class='img-play-num' mode='scaleToFill' src='/pages/image/toPlay.png'></image>
+        <view class='right'>{{playNum}}</view>
+      </view>
+      <view class='audio-num-rate'>
+        <image class='img-rate-num' mode='scaleToFill' src='/pages/image/praise.png'></image>
+        <view class='right'>{{praiseNum}}</view>
+      </view>
+    </view>
+  </view>
+</template>

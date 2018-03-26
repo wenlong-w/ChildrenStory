@@ -1,0 +1,70 @@
+<image src='{{imgUrl}}' style='width:100%'></image>
+<view class='play-container'>
+  <view class='top'>
+    <!--  音频进度控件 -->
+    <view class="audio-control-process">
+      <!-- 左值展示，currentProcess -->
+      <text class="current-process">{{currentProcess}}</text>
+      <view class='process-body'>
+        <!-- 进度条 -->
+        <slider bindchange="hanleSliderChange" 
+        bindtouchstart="handleSliderMoveStart" 
+        bindtouchend="handleSliderMoveEnd" 
+        min="0" max="{{sliderMax}}" 
+        activeColor="#8f7df0" 
+        value="{{sliderValue}}" />
+      </view>
+      <!-- 右值展示，totalProcess -->
+      <text class="total-process">{{totalProcess}}</text>
+    </view>
+    <view class='audio-control-button'>
+      <image bindtap='toPreAudio' class='pre-audio' src='../image/preAudio.jpg' mode='aspectFit'></image>
+      <image bindtap='toPlayAudio' class='play-audio' style='display:{{playAudioDisplay}}' src='../image/playAudio.jpg' mode='aspectFit'></image>
+      <image bindtap='toPauseAudio' class='play-audio' style='display:{{pauseAudioDisplay}}' src='../image/pauseAudio.jpg' mode='aspectFit'></image>
+      <image bindtap='toNextAudio' class='next-audio' src='../image/nextAudio.jpg' mode='aspectFit'></image>
+    </view>
+
+    <view class='audio-info'>
+      <view class='audio-title'>{{audioTitle}}</view>
+      <view class='num'>
+        <view class='num-child'>时间：{{dt}}</view>
+        <view class='num-child'>播放：{{playNum}}</view>
+        <view class='num-child'>点赞：{{praiseNum}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='bottom'>
+    <view class='audio-praise-collect'>
+      <view class='pre-audio-praise-collect-operate' bindtap='doPraise'
+        style='display:{{prePraiseDisplay}}' >
+        <!-- <image src='../image/praise.jpg'></image> -->
+        <view class='font'>赞一个</view>
+      </view>
+      <view class='audio-praise-collect-operate'
+        style='display:{{praiseDisplay}}' >
+        <!-- <image src='../image/praise.jpg'></image> -->
+        <view class='font'>赞一个</view>
+      </view>
+      <view class='pre-audio-praise-collect-operate' bindtap='doCollect'
+        style='display:{{preCollectDisplay}}' >
+        <!-- <image src='../image/uncheckedCollect.jpg'></image> -->
+        <view class='font'>收藏</view>
+      </view>
+      <view class='audio-praise-collect-operate'
+        style='display:{{collectDisplay}}' >
+        <!-- <image src='../image/uncheckedCollect.jpg'></image> -->
+        <view class='font'>收藏</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='low-right-pay'>
+  <image src='../image/toPay.png' style='width:40px;height:40px'></image>
+</view>
+<view class='low-right-forward'>
+  <image src='../image/forward.png' style='width:40px;height:40px'></image>
+</view>
+<view class='low-right-back' bindtap='goBack'>
+  <image src='../image/goBack.png' style='width:40px;height:40px'></image>
+</view>
