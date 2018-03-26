@@ -9,7 +9,6 @@ const globalAudioListManager = app.courseAudioListManager;
 
 Page({
   onLoad: function (options) {
-    // console.log('onload');
     
   },
   onShow: function(){
@@ -21,7 +20,6 @@ Page({
     // console.log('oo', globalAudioListManager);
     let self = this;
     this.getStoryList(function (storyList) {
-      // console.log('最后的：', storyList);
 
       // console.log('globalAudioListManager.audioList:', globalAudioListManager.audioList);
       self.setData({
