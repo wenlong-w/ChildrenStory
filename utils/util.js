@@ -80,7 +80,6 @@ const getDiaryList = (callFun) => {
       && diaryList != 'undefined' && diaryList != undefined
       && diaryList != '') {
       diaryList = JSON.parse(diaryList);
-      // console.log("缓存的audioList:", audioList);
     } else {
       diaryList = [];
     }
