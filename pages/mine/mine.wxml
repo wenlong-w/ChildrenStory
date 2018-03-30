@@ -55,18 +55,19 @@
     </view>
   </view> -->
   <view class='button-view last'>
-    <view class='line' bindtap='toPraiseView'>
-      <image src='../image/zanPay.png'></image>
-      <view class='line-right reward'>
-        <view class='title'>支持</view>
-        <view class='brief-introduction'>感谢您的鼓励和支持</view>
-      </view>
-    </view>
+    
     <view class='line' bindtap='toDiaryBind'>
       <image src='../image/xiaoji.png'></image>
       <view class='line-right reward'>
         <view class='title'>小记</view>
-        <view class='brief-introduction'>记录生活中的一点小事</view>
+        <view class='brief-introduction'>记录生活中关于小糖豆的一点点小事 ^_^</view>
+      </view>
+    </view>
+    <view class='line' bindtap='toPraiseView'>
+      <image src='../image/zanPay.png'></image>
+      <view class='line-right reward'>
+        <view class='title'>支持</view>
+        <view class='brief-introduction'>您的鼓励和支持也是我们不断维护的动力</view>
       </view>
     </view>
     <view class='line' bindtap="aboutMe">

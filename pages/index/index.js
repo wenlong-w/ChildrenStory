@@ -47,7 +47,7 @@ Page({
   data: {
     imgUrls: [
       '../image/listenToMe.jpg',
-      '../image/doPraise.jpg',
+      // '../image/doPraise.jpg',
       '../image/diary.jpg'
       // '../image/listenToMe.jpg',
       // '../image/topPraise.jpg'
