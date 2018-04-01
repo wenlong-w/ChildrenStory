@@ -1,5 +1,7 @@
 <template name='audioItem' >
-  <image class='image' mode="{{mode}}" src="{{imgUrl}}"></image>
+  <block wx:if="{{imgFilePath}}"><image class='image' mode="{{mode}}" src="{{imgFilePath}}"></image></block>
+  <block wx:else><image class='image' mode="{{mode}}" src="{{imgUrl}}"></image></block>
+  
   <view id='{{id}}' class='audio-info' bindtap="toPlayAudio">
     <view class='title'>{{storyName}}</view>
     <view class='audio-num'>

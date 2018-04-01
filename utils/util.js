@@ -127,6 +127,96 @@ const doPraise = ()=> {
     }
   })
 }
+
+/**
+ * 将数据库中获取的imgUrl，通过file文件操作，换算得到imgFilePath，并且存储在audio_list里面
+ */
+const checkImgFileUrl = (storyList) => {
+  let storyArr = [];
+  storyList.forEach((story, index, storyList) => {
+    if(story.imgFileUrl && story.imgFileUrl!==''){
+      console.log('imgFileUrl：',story.imgFileUrl);
+    } else {
+      storyArr.push(toDownLoadFile(story));
+    }
+  });
+  Promise.all(storyArr).then(
+    allRes => {
+      allRes.forEach((dlfResult, index) => {
+        if (dlfResult.success){
+          setLocalFile(dlfResult.story).then(
+            lfRes => {
+              storyArr[index] = lfRes;
+              if (index === allRes.length -1){
+                console.log('storyList', storyList);
+                // console.log('storyArr', storyArr);
+                wx.setStorageSync('audio_list', JSON.stringify(storyList));
+              }
+            }
+          );
+        }
+      });
+      
+    }
+  );
+}
+
+const setLocalFile = (story) => {
+  return new Promise((resolve, reject) => {
+    // console.log("story res", story);
+    wx.saveFile({
+      tempFilePath: story.tempFilePath,
+      success: function (res) {
+        // console.log("保持后的地址 res", res);
+
+        // if (story.storyName === '小熊过桥' || story.storyName === '小马过河'){
+        //   resolve({ success: false });
+        // }else
+
+
+        if (res.savedFilePath){
+          story.imgFilePath = res.savedFilePath;
+          resolve({success:true, story: story});
+        } else {
+          resolve({ success: false });
+        }
+      },
+      fail: function (err) {
+        console.log("保持后的地址  err", err);
+        resolve({ success: false });
+      }
+    })
+  });
+}
+
+/**
+ * 根据url请求网络资源，得到一个临时路径
+ */
+const toDownLoadFile = (story) => {
+  return new Promise((resolve, reject) => {
+    wx.downloadFile({
+      url: story.imgUrl,
+      success: function (res) {
+
+        // if (story.storyName === '白雪公主' || story.storyName === '小蚂蚁回家'){
+        //   resolve({ success: false });
+        // } else
+        
+        if (res.statusCode === 200) {
+          story.tempFilePath = res.tempFilePath;
+          resolve({ success: true, story: story});
+        } else {
+          resolve({ success: false});
+        }
+      },
+      fail: function (err) {
+        console.log("downloadFile err ", err);
+        resolve({ success: false });
+      }
+    })
+  });
+}
+
 module.exports = {
   formatTime: formatTime,
   playAudio: playAudio,
@@ -134,5 +224,6 @@ module.exports = {
   getDate: getDate,
   stampFormatTime: stampFormatTime,
   doPraise: doPraise,
-  getDiaryList: getDiaryList
+  getDiaryList: getDiaryList,
+  checkImgFileUrl: checkImgFileUrl
 }

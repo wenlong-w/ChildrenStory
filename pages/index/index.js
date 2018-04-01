@@ -20,11 +20,11 @@ Page({
     // console.log('oo', globalAudioListManager);
     let self = this;
     this.getStoryList(function (storyList) {
-
       // console.log('globalAudioListManager.audioList:', globalAudioListManager.audioList);
       self.setData({
         audioList: storyList
       });
+      // console.log('storyListstoryListstoryList', storyList);
     });
   },
   onShareAppMessage: function (res) {
@@ -97,11 +97,11 @@ Page({
         && audioList != 'undefined' && audioList != undefined
         && audioList != '') {
         audioList = JSON.parse(audioList);
-        // console.log("缓存的audioList:", audioList);
       }else{
         audioList = [];
       }
     } catch (e) {
+      console.log('audioList catch:',e);
       audioList = [];
     }
     // cacheDate = 1;
@@ -118,6 +118,7 @@ Page({
           // console.log('audioList         res:', res);
           if (res.success) {
             let audioList = res.result.storyList;
+            util.checkImgFileUrl(audioList);
             if (audioList && audioList.length > 0) {
               for (var i = 0; i < audioList.length; i++) {
                 audioList[i].mode = "aspectFit";
