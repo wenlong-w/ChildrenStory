@@ -45,6 +45,7 @@ function doRequest(url, param) {
  * 后台请求前，检查session
  */
 function beforeRequest(call) {
+  console.log('beforeRequest');
   wxHasCheckedSession().then(
     hcs => {
       if (hcs.success) {
@@ -151,6 +152,7 @@ function wxLogin() {
     // 登录
     wx.login({
       success: res => {
+        console.log('res--:',res);
         wx.removeStorageSync('JSESSIONID')
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         let dt = new Date().getTime();
