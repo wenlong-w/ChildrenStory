@@ -3,6 +3,7 @@ import { beforeRequest } from 'utils/wxRequest.js'
 App({
   onLaunch: function () {
     // console.log('onLaunch');
+	
     /**
      * 首次进入小程序时，会检查用户的openid是否存在数据库中，并且把sessionkey传到前端
      
