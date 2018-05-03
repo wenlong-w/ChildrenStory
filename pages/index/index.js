@@ -9,7 +9,7 @@ const globalAudioListManager = app.courseAudioListManager;
 
 Page({
   onLoad: function (options) {
-    
+    util.guideToParise();
   },
   onShow: function(){
     wx.setNavigationBarTitle({

@@ -32,6 +32,58 @@ const add_zero = temp => {
 }
 
 /**
+ * 引导用户去赞赏，目前58天为一个周期
+ */
+const guideToParise = () => {
+  let nowDate = getDate();
+  let cacheDate = wx.getStorageSync('guide_parise_date');
+  if (cacheDate==''){
+    let gpDate = [];
+    gpDate.push(nowDate)
+    wx.setStorageSync('guide_parise_date', gpDate);
+  } else if (cacheDate.length==1){
+    if (cacheDate[0] == nowDate){
+      console.log('日期相等，不做处理');
+    }else{
+      cacheDate.push(nowDate);
+      let _days = cacheDate.sort().map((d, i) => {
+        let dt = new Date(d)
+        dt.setDate(dt.getDate() + 4 - i) // 处理为相同日期
+        return +dt
+      })
+      if (_days[0] == _days[1]){
+          console.log('连续两天登录');
+          wx.setStorageSync('guide_parise_date', cacheDate);
+          wx.showModal({
+            title: '小糖豆说',
+            content: '今天服务器的压力好像有点大，不妨鼓励鼓励，支持一下呗。',
+            confirmText: '好哒',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                doPraise();
+              }
+            }
+          })
+      } else {
+        let gpDate = [];
+        gpDate.push(nowDate)
+        wx.setStorageSync('guide_parise_date', gpDate);
+      }
+    }
+  } else if (cacheDate.length == 2){
+    let nowTS = new Date().getTime();
+    let cacheTS = new Date(cacheDate[1]).getTime();
+    let dayCha = (nowTS - cacheTS) / (24 * 60 * 60000);
+    if (dayCha > 58){
+      let gpDate = [];
+      gpDate.push(nowDate)
+      wx.setStorageSync('guide_parise_date', gpDate);
+    }
+  }
+}
+
+/**
  * 返回 2018-01-16
  */
 const getDate = () =>{
@@ -225,5 +277,6 @@ module.exports = {
   stampFormatTime: stampFormatTime,
   doPraise: doPraise,
   getDiaryList: getDiaryList,
-  checkImgFileUrl: checkImgFileUrl
+  checkImgFileUrl: checkImgFileUrl,
+  guideToParise: guideToParise
 }
