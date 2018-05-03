@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
 	"appid": "wx5c5b4509eb8513c6",
-	"projectname": "儿童故事每天听",
+	"projectname": "%E5%84%BF%E7%AB%A5%E6%95%85%E4%BA%8B%E6%AF%8F%E5%A4%A9%E5%90%AC",
 	"condition": {
 		"search": {
 			"current": -1,
