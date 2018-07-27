@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height:54%;
+  /* height:54%; */
 
 }
 .audio-control-process{
@@ -50,7 +50,7 @@
 }
 .audio-info .num{
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   color: #999;
   font-size: 14px;
 }
@@ -109,12 +109,14 @@
 }
 .low-right-forward{
   position:fixed;
-  right:20px;
+  right:18px;
   bottom:106px;
-  display: none
 }
 .low-right-back{
   position:fixed;
-  right:20px;
+  right:18px;
   bottom:60px;
+}
+.bottom{
+  display: none
 }

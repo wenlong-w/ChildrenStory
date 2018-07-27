@@ -1,4 +1,7 @@
 <image src='{{imgUrl}}' style='width:100%'></image>
+<view>
+    <ad unit-id="adunit-aa45112fad44c97f"></ad>
+  </view>
 <view class='play-container'>
   <view class='top'>
     <!--  音频进度控件 -->
@@ -27,13 +30,14 @@
     <view class='audio-info'>
       <view class='audio-title'>{{audioTitle}}</view>
       <view class='num'>
-        <view class='num-child'>时间：{{dt}}</view>
-        <view class='num-child'>播放：{{playNum}}</view>
-        <view class='num-child'>点赞：{{praiseNum}}</view>
+        <!-- <view class='num-child'>时间：{{dt}}</view> -->
+        <view class='num-child'>播放次数：{{playNum}}</view>
+        <view class='num-child'>播放时长：{{playTime}}</view>
+        <!-- <view class='num-child'>点赞：{{praiseNum}}</view> -->
       </view>
     </view>
   </view>
-
+  
   <view class='bottom'>
     <view class='audio-praise-collect'>
       <view class='pre-audio-praise-collect-operate' bindtap='doPraise'

@@ -42,6 +42,7 @@ Page({
           sliderMax: 100,
           sliderValue: 0,
           playNum: currentAudio.playNum,
+          playTime:currentAudio.playTime,
           dt: currentAudio.dt,
           praiseNum: currentAudio.praiseNum,
           audioTitle: currentAudio.storyName,
@@ -132,6 +133,7 @@ Page({
       sliderMax: 100,
       sliderValue: 0,
       playNum: currentAudio.playNum,
+      playTime: currentAudio.playTime,
       dt: currentAudio.dt,
       praiseNum: currentAudio.praiseNum,
       audioTitle: currentAudio.storyName,
@@ -191,7 +193,7 @@ Page({
                 audioList[index].playNum = currentAudio.playNum;
                 // console.log('length', audioList.length);
                 wx.setStorage({
-                  key: 'audio_list',
+                  key: 'audio_list_new',
                   data: JSON.stringify(audioList),
                 })
                 break;
@@ -245,7 +247,7 @@ Page({
             }
           }
           wx.setStorage({
-            key: 'audio_list',
+            key: 'audio_list_new',
             data: JSON.stringify(audioList),
           })
           // console.log(app.courseAudioListManager);

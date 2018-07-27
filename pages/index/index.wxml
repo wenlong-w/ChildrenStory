@@ -8,6 +8,12 @@
     </swiper-item>
   </block>
 </swiper>
+<view class='ad-index'>
+  <view class='cont'>
+    <ad unit-id="adunit-56fedee11647a244"></ad>
+  </view>
+</view>
+
 <view class="index-container">
   <view wx:for="{{audioList}}" wx:key="{{id}}" class='audio-template' >
     <template is="audioItem" data="{{...item}}"/>

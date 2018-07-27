@@ -45,7 +45,6 @@ function doRequest(url, param) {
  * 后台请求前，检查session
  */
 function beforeRequest(call) {
-  console.log('beforeRequest');
   wxHasCheckedSession().then(
     hcs => {
       if (hcs.success) {

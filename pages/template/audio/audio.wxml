@@ -10,8 +10,8 @@
         <view class='right'>{{playNum}}</view>
       </view>
       <view class='audio-num-rate'>
-        <image class='img-rate-num' mode='scaleToFill' src='/pages/image/praise.png'></image>
-        <view class='right'>{{praiseNum}}</view>
+        <image class='img-rate-num' mode='scaleToFill' src='/pages/image/playTime.png'></image>
+        <view class='right'>{{playTime}}</view>
       </view>
     </view>
   </view>

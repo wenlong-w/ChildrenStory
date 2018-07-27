@@ -20,7 +20,7 @@ Page({
     // console.log('oo', globalAudioListManager);
     let self = this;
     this.getStoryList(function (storyList) {
-      // console.log('globalAudioListManager.audioList:', globalAudioListManager.audioList);
+      console.log('globalAudioListManager.audioList:', globalAudioListManager.audioList);
       self.setData({
         audioList: storyList
       });
@@ -92,7 +92,7 @@ Page({
       
     }
     try {
-      audioList = wx.getStorageSync('audio_list');
+      audioList = wx.getStorageSync('audio_list_new');
       if (audioList && audioList != null && audioList != 'null'
         && audioList != 'undefined' && audioList != undefined
         && audioList != '') {
@@ -125,7 +125,7 @@ Page({
                 audioList[i].dt = util.stampFormatTime(audioList[i].dt.time);
                 globalAudioListManager.audioList.push(audioList[i]);
               }
-              wx.setStorageSync('audio_list', JSON.stringify(audioList));
+              wx.setStorageSync('audio_list_new', JSON.stringify(audioList));
               wx.setStorageSync('now_date', nowDate);
               callFun(audioList);
             } else {
