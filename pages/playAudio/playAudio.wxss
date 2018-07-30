@@ -110,7 +110,7 @@
 .low-right-forward{
   position:fixed;
   right:18px;
-  bottom:106px;
+  bottom:96px;
 }
 .low-right-back{
   position:fixed;
@@ -119,4 +119,8 @@
 }
 .bottom{
   display: none
+}
+button[plain]{
+  border: 0px solid red;
+  padding-right:0px;
 }

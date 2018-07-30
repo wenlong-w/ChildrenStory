@@ -19,15 +19,15 @@ Page({
     // console.log('onready');
     globalAudioListManager = app.courseAudioListManager;
     audioList = globalAudioListManager.audioList;
-    // console.log(',,,,',audioList.length);
     currentAudio = globalAudioListManager.currentAudio; //点击的故事
-    // console.log('判断 当前音频',globalBgAudioManager.src);
-    // console.log('paused  ',globalBgAudioManager.paused);
-    if (globalBgAudioManager.src){
-      if (globalBgAudioManager.paused){ //播放的故事暂停或终止了，进入页面就再次播放
+    console.log('globalBgAudioManager.src', globalBgAudioManager);
+    this.currentAudioInfo();
+
+    /*if (globalBgAudioManager.src) {
+      if (globalBgAudioManager.paused) { //播放的故事暂停或终止了，进入页面就再次播放
         console.log('当前播放的音乐暂停了');
         this.currentAudioInfo();
-      }else{
+      } else {
         console.log('当前有播放的音乐 忽略');
         let playFlag = 'none';
         let pauseFlag = '';
@@ -42,7 +42,7 @@ Page({
           sliderMax: 100,
           sliderValue: 0,
           playNum: currentAudio.playNum,
-          playTime:currentAudio.playTime,
+          playTime: currentAudio.playTime,
           dt: currentAudio.dt,
           praiseNum: currentAudio.praiseNum,
           audioTitle: currentAudio.storyName,
@@ -51,10 +51,10 @@ Page({
           pauseAudioDisplay: pauseFlag,
         })
       }
-    } else{
+    } else {
       // console.log('没有故事');
       this.currentAudioInfo();
-    }
+    } */
 
     globalBgAudioManager.onTimeUpdate(
       ()=>{
