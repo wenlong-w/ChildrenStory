@@ -79,7 +79,7 @@ Page({
     this.animation = animation
   },
   onLoad: function () {
-    // console.log('app.userInfo ', app.userInfo);
+    console.log('app.userInfo ', app.userInfo);
     // console.log('this.data.canIUse ', this.data.canIUse);
     if (app.userInfo) {
       this.setData({
@@ -90,7 +90,7 @@ Page({
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
-        // console.log('res=====',res);
+        console.log('res=====',res);
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true

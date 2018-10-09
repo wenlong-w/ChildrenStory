@@ -9,9 +9,11 @@ const globalAudioListManager = app.courseAudioListManager;
 
 Page({
   onLoad: function (options) {
-    util.guideToParise();
+    // util.guideToParise();
+    console.log('onLoad');
   },
   onShow: function(){
+    console.log('onShow');
     wx.setNavigationBarTitle({
       title: '儿童故事每天听'
     })
@@ -27,23 +29,6 @@ Page({
       // console.log('storyListstoryListstoryList', storyList);
     });
   },
-  onShareAppMessage: function (res) {
-    // console.log('转发回调',res)
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      // console.log(res.target)
-    }
-    return {
-      title: '儿童故事每天听',
-      path: "pages/index/index",
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
-    }
-  },
   data: {
     imgUrls: [
       '../image/listenToMe.jpg',
@@ -56,6 +41,7 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1200,
+    more: globalAudioListManager.more,
     audioList: [
       
     ]
@@ -139,7 +125,20 @@ Page({
     }
   },
   onReady: function () {
-    // Do something when page ready.
+    doRequest('/ChildrenStory/StoryInfoServlet.do', { methodName: 'findByKey', key: 'moreStory' }).then(
+      res => {
+        console.log('onready', res);
+        if(res.success){
+          let result = res.result;
+          let moreStory = result.moreStory;
+          if(moreStory && moreStory.storyValue=='true'){
+            console.log('要展示哦');
+            globalAudioListManager.more = true
+            this.setData({more: true});
+          }
+        }
+      }
+    );
   },
   toPlayAudio: function (event) {
     let id = event.currentTarget.id;
@@ -151,12 +150,37 @@ Page({
     }
     util.playAudio();
   },
-  toForward: function(){
-    this.onShareAppMessage();
-    // util.forwardStory();oooo
-
+  onShareAppMessage: function(){
+    const randomImage = Math.floor((Math.random() * (globalAudioListManager.shareImage.length)));
+    return {
+      title: '儿童故事每天听',
+      desc: '带孩子走进一个美丽的故事世界。',
+      path: '/pages/index/index',
+      imageUrl: globalAudioListManager.shareImage[randomImage],
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   },
   goPraise: function(){
     util.doPraise();
+  },
+  moreStory: function(){
+    console.log('more');
+    wx.navigateToMiniProgram({
+      appId: 'wx8ee8c1f94e41eecb',
+      path: 'pages/index/index',
+      success(res) {
+        // 打开成功
+        console.log('res----', res);
+      },
+      fail(err) {
+        // 打开成功
+        console.log('err----', err);
+      }
+    })
   }
 })

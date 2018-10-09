@@ -27,6 +27,12 @@
   right:18px;
   bottom:60px;
 }
+.more-story{
+  /* display: none; */
+  position:fixed;
+  right:12px;
+  bottom:106px;
+}
 button[plain]{
   border: 0px solid red
 }

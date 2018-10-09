@@ -393,16 +393,13 @@ Page({
   /**
    * 转发
    */
-  onShareAppMessage: function (res) {
-    console.log('转发回调', currentAudio)
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
+  onShareAppMessage: function () {
+    const randomImage = Math.floor((Math.random() * (globalAudioListManager.shareImage.length)));
     return {
-      title: '小故事：' + currentAudio.storyName,
-      path: "pages/index/index",
-      imageUrl: currentAudio.imgUrl,
+      title: '儿童故事每天听',
+      desc: '带孩子走进一个美丽的故事世界。',
+      path: '/pages/index/index',
+      imageUrl: globalAudioListManager.shareImage[randomImage],
       success: function (res) {
         // 转发成功
       },

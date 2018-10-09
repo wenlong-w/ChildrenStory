@@ -17,7 +17,7 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
-        // console.log('getSetting   res:', res)
+        console.log('getSetting   res:', res)
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -45,7 +45,13 @@ App({
   },
   courseAudioListManager: {
     currentAudio:{},
-    audioList:[]
+    audioList:[],
+    shareImage: [
+      'http://image-1255464404.file.myqcloud.com/%E5%B0%8F%E9%A9%AC%E8%BF%87%E6%B2%B3.jpg',
+      'http://image-1255464404.file.myqcloud.com/%E7%99%BD%E9%9B%AA%E5%85%AC%E4%B8%BB.jpg',
+      'http://image-1255464404.file.myqcloud.com/%E5%8D%96%E7%81%AB%E6%9F%B4%E7%9A%84%E5%B0%8F%E5%A5%B3%E5%AD%A9.jpg'
+    ],
+    more:false
   },
   userInfo: null,
   globalBgAudioManager: wx.getBackgroundAudioManager()
